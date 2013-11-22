@@ -1,1 +1,4 @@
-shell
+shell skills
+=======
+
+about shell, linux
