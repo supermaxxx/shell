@@ -24,10 +24,9 @@ access_log="webaccess.log"
 
 function month() {
   input=$1
-  yue=$(date -d "$input"  +%Y-%m-%d)
-  echo $yue
+  d=$(date -d "$input"  +%Y-%m-%d)
+  echo $d
 }
-
 
 function e2d() {
   input=$1
