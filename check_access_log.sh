@@ -1,4 +1,4 @@
-"""
+:'
 现有web服务的访问日志webaccess.log，如下：
 200 123.190.216.51 - shanghai.baixing.com [03/Mar/2013:02:59:59 +0800] "GET /menpiao/a250632202.html HTTP/1.1" "http://shanghai.baixing.com/menpiao/" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)" 9175 384 54231
 200 123.190.216.52 - shanghai.baixing.com [03/Mar/2013:03:59:59 +0800] "GET /menpiao/a250632202.html HTTP/1.1" "http://shanghai.baixing.com/menpiao/" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)" 9175 384 54232
@@ -15,7 +15,7 @@
 现需要从中分别提取所有包含“Googlebot”和“Baiduspider”，且非404打头的行，
 分别保存到以访问日期分割的文件中并压缩，如googlebot.2013-03-03.log.bz2和baiduspider.2013-03-03.log.bz2。
 请用bash shell，并以最优的方式实现这段脚本。
-"""
+'
 
 #!/bin/bash
 # author: wangyucheng
