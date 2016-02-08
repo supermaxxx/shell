@@ -1,20 +1,21 @@
 #!/bin/bash
 echo -n "Please enter command: "
 read cmd
-if [ -n "$cmd" ]; then
-binpath=`which $cmd`
-echo "BIN_PATH: "$binpath
-rpmname=`rpm -qf $binpath`
-echo "RPM_NAME: "$rpmname
+if [ -n ${cmd} ]; then
+  bin_path=$(which ${cmd} 2>/dev/null)
+  result=$?
+  if [ ${result} -eq 0 ];then
+    rpm -qf ${bin_path}
+  else
+    echo "The command \"${cmd}\" is not exist!"
+  fi
 fi
 
 
 ## result:
-# sh use_command_to_find_rpmname.sh
-# Please enter command: df
-# BIN_PATH: /usr/bin/df
-# RPM_NAME: coreutils-8.22-11.el7.x86_64
-# sh use_command_to_find_rpmname.sh
-# Please enter command: sar
-# BIN_PATH: /usr/bin/sar
-# RPM_NAME: sysstat-9.0.4-27.el6.x86_64
+#[root@localhost ~]# sh use_command_to_find_rpmname.sh
+#Please enter command: abc
+#The command "abc" is not exist!
+#[root@localhost ~]# sh use_command_to_find_rpmname.sh
+#Please enter command: ifconfig
+#net-tools-2.0-0.17.20131004git.el7.x86_64
