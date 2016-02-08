@@ -3,8 +3,7 @@ echo -n "Please enter command: "
 read cmd
 if [ -n ${cmd} ]; then
   bin_path=$(which ${cmd} 2>/dev/null)
-  result=$?
-  if [ ${result} -eq 0 ];then
+  if [ $? -eq 0 ];then
     rpm -qf ${bin_path}
   else
     echo "The command \"${cmd}\" is not exist!"
